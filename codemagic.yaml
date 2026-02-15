@@ -27,16 +27,3 @@ workflows:
           ./gradlew bundleRelease
     artifacts:
       - android/app/build/outputs/bundle/release/**/*.aab
-    publishing:
-      email:
-        recipients:
-          - $CODEMAGIC_EMAIL
-        notify:
-          success: true
-          failure: true
-      slack:
-        channel: '#builds'
-        notify_on_build_start: true
-        notify:
-          success: true
-          failure: true
