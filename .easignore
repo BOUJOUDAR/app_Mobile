@@ -9,12 +9,3 @@ web-build
 *.p12
 *.key
 *.mobileprovision
-*.tsbuildinfo
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-.env
-.env.local
-.env.*.local
-.DS_Store
-build_log.txt
