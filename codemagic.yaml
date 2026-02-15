@@ -16,14 +16,10 @@ workflows:
     scripts:
       - name: Install dependencies
         script: |
-          npm install --legacy-peer-deps
-      - name: Prebuild project
+          npm install
+      - name: Build with EAS
         script: |
-          npx expo prebuild --clean --non-interactive
-      - name: Build Android App Bundle
-        script: |
-          cd android
-          chmod +x gradlew
-          ./gradlew bundleRelease
+          npm install -g eas-cli
+          eas build --platform android --local
     artifacts:
       - android/app/build/outputs/bundle/release/**/*.aab
