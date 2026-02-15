@@ -9,10 +9,6 @@ workflows:
       events:
         - push
         - tag
-      branch:
-        patterns:
-          - pattern: main
-            include: true
     cache:
       cache_paths:
         - $HOME/Library/Caches/CocoaPods
