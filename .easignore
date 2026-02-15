@@ -13,4 +13,8 @@ web-build
 npm-debug.*
 yarn-debug.*
 yarn-error.*
-.env*.local
+.env
+.env.local
+.env.*.local
+.DS_Store
+build_log.txt
