@@ -17,9 +17,9 @@ workflows:
       - name: Install dependencies
         script: |
           npm install --legacy-peer-deps
-      - name: Setup local.properties
+      - name: Prebuild project
         script: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > $FCI_BUILD_DIR/android/local.properties
+          npx expo prebuild --clean
       - name: Build Android App Bundle
         script: |
           cd android
