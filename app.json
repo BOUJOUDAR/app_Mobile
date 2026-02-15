@@ -18,22 +18,19 @@
     },
     "android": {
       "package": "com.anonymous.applovely",
-      "versionCode": 4,
+      "versionCode": 5,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1D0B32"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE"
+      ]
     },
     "plugins": [
-      [
-        "react-native-google-mobile-ads",
-        {
-          "androidAppId": "ca-app-pub-3181597249638547~4008060861",
-          "iosAppId": "ca-app-pub-3181597249638547~4008060861"
-        }
-      ]
     ],
     "web": {
       "favicon": "./assets/favicon.png"
