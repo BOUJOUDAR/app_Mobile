@@ -37,25 +37,6 @@ export default function App() {
   );
 }
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcomeText}>Open up App.tsx to start working on your app!</Text>
-      
-      <View style={styles.adContainer}>
-        <BannerAd
-          unitId={BANNER_AD_UNIT_ID}
-          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-          requestOptions={{
-            requestNonPersonalizedAdsOnly: true,
-          }}
-        />
-      </View>
-      
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
