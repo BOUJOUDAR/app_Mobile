@@ -19,10 +19,14 @@ workflows:
           npm install --legacy-peer-deps
       - name: Prebuild project
         script: |
-          npx expo prebuild --clean
+          npx expo prebuild --clean --no-install
+      - name: Install prebuild dependencies
+        script: |
+          cd android
+          ./gradlew --version
       - name: Build Android App Bundle
         script: |
           cd android
-          ./gradlew bundleRelease
+          ./gradlew bundleRelease -x preDebugBuild
     artifacts:
       - android/app/build/outputs/bundle/release/**/*.aab
