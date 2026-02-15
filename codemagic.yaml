@@ -16,7 +16,7 @@ workflows:
     scripts:
       - name: Install dependencies
         script: |
-          npm install --legacy-peer-deps --no-save
+          npm install --legacy-peer-deps
       - name: Prebuild project
         script: |
           npx expo prebuild --clean --non-interactive
@@ -24,6 +24,6 @@ workflows:
         script: |
           cd android
           chmod +x gradlew
-          ./gradlew bundleRelease -x preDebugBuild --stacktrace
+          ./gradlew bundleRelease
     artifacts:
       - android/app/build/outputs/bundle/release/**/*.aab
