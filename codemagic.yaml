@@ -3,7 +3,7 @@ workflows:
     name: Android Build
     max_build_duration: 120
     environment:
-      node: 18.18.0
+      node: 20.x
     triggering:
       events:
         - push
@@ -16,17 +16,14 @@ workflows:
     scripts:
       - name: Install dependencies
         script: |
-          npm install --legacy-peer-deps
+          npm install --legacy-peer-deps --no-save
       - name: Prebuild project
         script: |
-          npx expo prebuild --clean --no-install
-      - name: Install prebuild dependencies
-        script: |
-          cd android
-          ./gradlew --version
+          npx expo prebuild --clean --non-interactive
       - name: Build Android App Bundle
         script: |
           cd android
-          ./gradlew bundleRelease -x preDebugBuild
+          chmod +x gradlew
+          ./gradlew bundleRelease -x preDebugBuild --stacktrace
     artifacts:
       - android/app/build/outputs/bundle/release/**/*.aab
