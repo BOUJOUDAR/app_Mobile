@@ -1,7 +1,6 @@
 node_modules
 .expo
 .git
-android
 ios
 dist
 web-build
@@ -15,6 +14,3 @@ npm-debug.*
 yarn-debug.*
 yarn-error.*
 .env*.local
-java.io.IOException
-Get
-Run
