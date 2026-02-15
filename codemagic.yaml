@@ -1,6 +1,6 @@
 workflows:
   android-workflow:
-    name: Android Build
+    name: Android Build with EAS
     max_build_duration: 120
     environment:
       node: 18.19.0
@@ -10,16 +10,18 @@ workflows:
         - tag
     cache:
       cache_paths:
-        - $HOME/Library/Caches/CocoaPods
         - $HOME/.gradle/caches
         - $HOME/.gradle/wrapper
+        - $HOME/Library/Caches/CocoaPods
     scripts:
       - name: Install dependencies
         script: |
           npm install
-      - name: Build with EAS
+      - name: Setup EAS
         script: |
           npm install -g eas-cli
-          eas build --platform android --local
+      - name: Build with EAS
+        script: |
+          eas build --platform android --non-interactive
     artifacts:
       - android/app/build/outputs/bundle/release/**/*.aab
